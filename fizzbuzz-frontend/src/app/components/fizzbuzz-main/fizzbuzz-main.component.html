@@ -1,0 +1,37 @@
+<h1 id="words">FizzBuzz</h1>
+<form *ngIf='fizzbuzzForm' [formGroup]="fizzbuzzForm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-2">
+        <input type="number" formControlName="firstNumber" class="form-control" placeholder="Primer número" required/>
+      </div>
+      <div class="col-md-2">
+        <input type="number" formControlName="secondNumber" class="form-control" placeholder="Segundo número" required/>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-success" (click)="onSubmit()">FizzBuzz</button>
+      </div>
+    </div>
+    <div *ngIf="(!(this.fizzbuzzForm.valid) || errorMessage != '') && submit" class="row justify-content-center mt-4">
+      <div class="col-md-4">
+        <div class="alert alert-danger" role="alert">
+          {{this.errorMessage}}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="operation?.description" class="row justify-content-center mt-4">
+      <div class="col-md-4">
+        <div class="alert alert-success" role="alert">
+          {{operation?.description}}
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-2">
+      <div *ngFor="let item of operation?.list" class="square ml-3">
+        <div class="content">
+          {{item}}
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
