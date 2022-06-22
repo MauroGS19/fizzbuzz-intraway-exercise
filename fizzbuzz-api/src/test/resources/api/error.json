@@ -1,0 +1,6 @@
+{
+    "timestamp": null,
+    "status": "400 BAD_REQUEST",
+    "message": "Los parámetros enviados son incorrectos",
+    "path": "/intraway/v1/fizzbuzz/100/1"
+}
